@@ -5,13 +5,14 @@ import api from "../services/api";
 
 const { Panel } = Collapse;
 
-export default function Units() {
-    const [units, setUnits] = useState<any[]>([]);
+export default function Users() {
+    const [users, setUsers] = useState<any[]>([]);
 
     useEffect(() => {
-        const promise = api.getUnits();
+        const promise = api.getAllUsers();
         promise.then((response) => {
-            setUnits(response.data);
+            console.log(response);
+            setUsers(response.data);
         });
     }, []);
 
@@ -21,11 +22,12 @@ export default function Units() {
 
     return (
         <>  
-            <h1>Units</h1>
-            {units ? units.map((unit) =>
+            <h1>Users</h1>
+            {users ? users.map((user) =>
                 <Collapse onChange={onChange}>
-                    <Panel header={unit.name} key="1">
-                        <p><strong>Company: </strong>{unit.company}</p>
+                    <Panel header={user.username} key="1">
+                        <p><strong>Email: </strong>{user.email}</p>
+                        <p><strong>Company: </strong>{user.company}</p>
                     </Panel>
                 </Collapse>
             ): null}

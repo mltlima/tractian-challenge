@@ -40,7 +40,6 @@ function Units(props: any) {
     useEffect(() => {
         const promise = api.getUnitsByCompany(name);
         promise.then((response) => {
-            console.log(response);
             setUnits(response.data);
         });
     }, []);

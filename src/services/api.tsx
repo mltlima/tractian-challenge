@@ -26,11 +26,16 @@ async function getUnits() {
     return await axios.get(`${URL}/units`);
 }
 
+async function getAllUsers() {
+    return await axios.get(`${URL}/users`);
+}
+
 const api = {
     getAllAssets,
     getAllCompanies,
     getUnitsByCompany,
     getUnits,
+    getAllUsers,
     
 }
 
