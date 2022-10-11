@@ -14,8 +14,18 @@ async function getAllAssets() {
     return await axios.get(`${URL}/assets`);
 }
 
+async function getAllCompanies() {
+    return await axios.get(`${URL}/companies`);
+}
+
+async function getUnitsByCompany(company : string) {
+    return await axios.get(`${URL}/units/company/${company}`);
+}
+
 const api = {
     getAllAssets,
+    getAllCompanies,
+    getUnitsByCompany,
 
 }
 

@@ -4,6 +4,7 @@ import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useEffect, useState } from "react";
 
 import Assets from './assets';
+import Companies from './companies';
 
 const { Header, Content, Sider } = Layout;
 
@@ -75,6 +76,7 @@ export default function Home() {
             }}
           >
             {page === 'assets' && <Assets />}
+            {page === 'companies' && <Companies />}
           </Content>
         </Layout>
       </Layout>

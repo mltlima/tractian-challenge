@@ -11,7 +11,6 @@ export default function Assets() {
     useEffect(() => {
         const promise = api.getAllAssets();
         promise.then((response) => {
-            console.log(response);
             setAssets(response.data);
 
             const data = response.data.map((asset: Asset) => {
@@ -28,8 +27,8 @@ export default function Assets() {
   
     return (
         <>  
-            {graphData.length > 1 ? <AssetChart name="Assets" data={graphData} /> : null}
             <h1>Assets</h1>
+            {graphData.length > 1 ? <AssetChart name="Assets" data={graphData} /> : null}
             {assets ? assets.map((asset) => 
             <AssetCollapseNav description={asset.description} health={asset.health} image={asset.image} model={asset.model} name={asset.name} owner={asset.owner} status={asset.status} unit={asset.unit}/>) 
             : null}
