@@ -55,3 +55,9 @@
 .site-layout-background {
   background: #fff;
 }
+
+.asset-image {
+  height: 200px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
