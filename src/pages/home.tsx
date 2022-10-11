@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 
 import Assets from './assets';
 import Companies from './companies';
+import Units from './units';
 
 const { Header, Content, Sider } = Layout;
 
@@ -77,6 +78,7 @@ export default function Home() {
           >
             {page === 'assets' && <Assets />}
             {page === 'companies' && <Companies />}
+            {page === 'units' && <Units />}
           </Content>
         </Layout>
       </Layout>

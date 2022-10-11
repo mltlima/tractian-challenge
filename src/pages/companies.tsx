@@ -11,7 +11,6 @@ export default function Companies() {
     useEffect(() => {
         const promise = api.getAllCompanies();
         promise.then((response) => {
-            console.log(response);
             setCompanies(response.data);
         });
     }, []);
@@ -26,7 +25,6 @@ export default function Companies() {
             {companies ? companies.map((company) =>
                 <Collapse onChange={onChange}>
                     <Panel header={company.name} key="1">
-                        <h2>{company.name}</h2>
                         <Units name={company.name}/>
                     </Panel>
                 </Collapse>

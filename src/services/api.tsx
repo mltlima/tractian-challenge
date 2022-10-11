@@ -22,11 +22,16 @@ async function getUnitsByCompany(company : string) {
     return await axios.get(`${URL}/units/company/${company}`);
 }
 
+async function getUnits() {
+    return await axios.get(`${URL}/units`);
+}
+
 const api = {
     getAllAssets,
     getAllCompanies,
     getUnitsByCompany,
-
+    getUnits,
+    
 }
 
 export default api;
