@@ -30,13 +30,22 @@ async function getAllUsers() {
     return await axios.get(`${URL}/users`);
 }
 
+async function signIn(email : string, password : string) {
+    return await axios.post(`${URL}/login`, { email, password });
+}
+
+async function signUp(email : string, password : string, confirmPassword: string, username : string, company : string) {
+    return await axios.post(`${URL}/register`, { email, password, confirmPassword, username, company });
+}
+
 const api = {
     getAllAssets,
     getAllCompanies,
     getUnitsByCompany,
     getUnits,
     getAllUsers,
-    
+    signIn,
+    signUp,
 }
 
 export default api;

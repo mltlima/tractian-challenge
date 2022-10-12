@@ -11,7 +11,6 @@ export default function Users() {
     useEffect(() => {
         const promise = api.getAllUsers();
         promise.then((response) => {
-            console.log(response);
             setUsers(response.data);
         });
     }, []);

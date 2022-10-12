@@ -7,6 +7,7 @@ import Assets from './assets';
 import Companies from './companies';
 import Units from './units';
 import Users from './users';
+import Account from './account';
 
 const { Header, Content, Sider } = Layout;
 
@@ -60,8 +61,11 @@ export default function Home() {
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
             style={{ height: '100%', borderRight: 0 }}
-            items={items2}
-          />
+          >
+            <Menu.Item key="1" onClick={() => setPage('account')} icon={React.createElement(UserOutlined)}>
+              <span>Account</span>
+            </Menu.Item>
+          </Menu>
         </Sider>
         <Layout style={{ padding: '0 24px 24px' }}>
           <Breadcrumb style={{ margin: '16px 0' }}>
@@ -81,6 +85,7 @@ export default function Home() {
             {page === 'companies' && <Companies />}
             {page === 'units' && <Units />}
             {page === 'users' && <Users />}
+            {page === 'account' && <Account />}
           </Content>
         </Layout>
       </Layout>
